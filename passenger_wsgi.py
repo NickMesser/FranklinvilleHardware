@@ -1,10 +1,8 @@
-import sys
+import imp
 import os
+import sys
 
 sys.path.insert(0, os.path.dirname(__file__))
 
-VENV = os.path.join(os.path.dirname(__file__), "venv", "lib", "python3.11", "site-packages")
-if os.path.isdir(VENV):
-    sys.path.insert(0, VENV)
-
-from app import app as application
+wsgi = imp.load_source("wsgi_handler", os.path.dirname(__file__) + "/app.py")
+application = wsgi.app
