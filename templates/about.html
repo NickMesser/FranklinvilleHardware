@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+{% block title %}About Us - Franklinville Hardware{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="bg-navy py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-white">About Us</h1>
+        <p class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
+            Get to know the people and story behind Franklinville Hardware.
+        </p>
+    </div>
+</section>
+
+<!-- Our Story -->
+<section class="py-16 md:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold text-navy">Our Story</h2>
+                <div class="mt-3 w-16 h-1 bg-brand-red rounded"></div>
+                <p class="mt-6 text-gray-600 leading-relaxed text-lg">
+                    Franklinville Hardware has been a cornerstone of the Franklinville, New York community. What started as a small shop with a simple goal — to provide quality hardware and honest service — has grown into the trusted resource that neighbors depend on for all their project needs.
+                </p>
+                <p class="mt-4 text-gray-600 leading-relaxed text-lg">
+                    Through the years, our commitment has never wavered. We believe that a hardware store should be more than just a place to buy supplies. It should be a place where you can get advice, share ideas, and feel like part of a community.
+                </p>
+            </div>
+            <div class="bg-navy-lighter rounded-2xl p-10 flex items-center justify-center">
+                <div class="text-center">
+                    <svg class="w-24 h-24 text-navy mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                              d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                    </svg>
+                    <p class="mt-4 text-navy font-bold text-xl">Proudly Serving</p>
+                    <p class="text-gray-600 text-lg">Franklinville, NY</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mission & Values -->
+<section class="py-16 md:py-20 bg-navy-lighter">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-navy">Our Mission &amp; Values</h2>
+            <div class="mt-3 w-16 h-1 bg-brand-red mx-auto rounded"></div>
+        </div>
+        <div class="max-w-3xl mx-auto">
+            <p class="text-center text-lg text-gray-700 leading-relaxed mb-12">
+                Our mission is simple: to be the hardware store our community deserves — one that offers fair prices, quality products, and the kind of personal service that big box stores just can't match.
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Value 1 -->
+            <div class="bg-white rounded-xl p-6 text-center shadow-sm">
+                <div class="w-14 h-14 bg-brand-red/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-7 h-7 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                    </svg>
+                </div>
+                <h3 class="font-bold text-navy text-lg mb-2">Integrity</h3>
+                <p class="text-gray-600 text-sm">Honest pricing, honest advice — every time you walk through our doors.</p>
+            </div>
+            <!-- Value 2 -->
+            <div class="bg-white rounded-xl p-6 text-center shadow-sm">
+                <div class="w-14 h-14 bg-brand-red/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-7 h-7 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                    </svg>
+                </div>
+                <h3 class="font-bold text-navy text-lg mb-2">Community</h3>
+                <p class="text-gray-600 text-sm">We're more than a store — we're your neighbors, and we care about Franklinville.</p>
+            </div>
+            <!-- Value 3 -->
+            <div class="bg-white rounded-xl p-6 text-center shadow-sm">
+                <div class="w-14 h-14 bg-brand-red/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-7 h-7 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
+                </div>
+                <h3 class="font-bold text-navy text-lg mb-2">Knowledge</h3>
+                <p class="text-gray-600 text-sm">Our team brings real experience to help you tackle any project with confidence.</p>
+            </div>
+            <!-- Value 4 -->
+            <div class="bg-white rounded-xl p-6 text-center shadow-sm">
+                <div class="w-14 h-14 bg-brand-red/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-7 h-7 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+                    </svg>
+                </div>
+                <h3 class="font-bold text-navy text-lg mb-2">Quality</h3>
+                <p class="text-gray-600 text-sm">We stock products we believe in, from brands we trust — so you can too.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Community Involvement -->
+<section class="py-16 md:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-navy">Part of the Community</h2>
+            <div class="mt-3 w-16 h-1 bg-brand-red mx-auto rounded"></div>
+            <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+                Franklinville isn't just where we do business — it's home. We're proud to support local events, sponsor community initiatives, and be a place where folks can come for help with anything from a leaky faucet to a full renovation.
+            </p>
+            <p class="mt-4 text-lg text-gray-600 leading-relaxed">
+                We believe in the power of a strong community, and we're grateful to be a part of this one. Thank you for choosing to shop local.
+            </p>
+            <a href="/contact"
+               class="mt-8 inline-block bg-brand-red hover:bg-brand-red-dark text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors shadow-lg">
+                Come Say Hello
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
