@@ -4,8 +4,12 @@
 
 {% block content %}
 <!-- Page Header -->
-<section class="bg-navy py-16 md:py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<section class="relative bg-navy py-16 md:py-20 overflow-hidden">
+    <div class="absolute inset-0">
+        <img src="{{ url_for('static', filename='IMG_1454.JPG') }}" alt="" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-navy/80"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 class="reveal reveal-up text-4xl md:text-5xl font-bold text-white">About Us</h1>
         <p class="reveal reveal-up mt-4 text-lg text-gray-300 max-w-2xl mx-auto" style="transition-delay:0.15s">
             8,000 square feet of quality hardware, trusted brands, and hometown service in the heart of Franklinville, NY.
@@ -27,17 +31,8 @@
                     Today, our 8,000 square foot store is packed with an extensive variety of merchandise, from everyday essentials to specialty items. We carry the brand-name products that professionals and homeowners trust, and we back them up with the kind of knowledgeable, personal service that big box stores just can't match.
                 </p>
             </div>
-            <div class="reveal reveal-right bg-navy-lighter rounded-2xl p-10 flex items-center justify-center">
-                <div class="text-center">
-                    <svg class="w-24 h-24 text-navy mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                              d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-                    </svg>
-                    <p class="mt-4 text-navy font-bold text-xl">Proudly Serving</p>
-                    <p class="text-gray-600 text-lg">Franklinville, NY</p>
-                    <p class="mt-2 text-navy font-semibold">Since 2021</p>
-                    <p class="text-gray-500 text-sm mt-1">8,000 sq ft of hardware &amp; more</p>
-                </div>
+            <div class="reveal reveal-right rounded-2xl overflow-hidden shadow-lg">
+                <img src="{{ url_for('static', filename='IMG_1460.JPG') }}" alt="DeWalt tools on display at Franklinville Hardware" class="w-full h-full object-cover">
             </div>
         </div>
     </div>
@@ -53,30 +48,30 @@
                 We stock an extensive variety of merchandise from the top names in the industry.
             </p>
         </div>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 reveal-stagger">
-            <div class="bg-white rounded-2xl h-32 px-6 flex items-center justify-center shadow-sm hover:shadow-lg transition-shadow">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/DeWalt_Logo.svg" alt="DeWalt" class="h-16 w-auto max-w-[200px] object-contain">
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-5 reveal-stagger">
+            <div class="bg-white rounded-xl py-3 px-3 sm:px-5 overflow-hidden flex items-center justify-center shadow-sm hover:shadow-lg transition-shadow">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/DeWalt_Logo.svg" alt="DeWalt" class="h-12 sm:h-14 max-w-full object-contain">
             </div>
-            <div class="bg-white rounded-2xl h-32 px-6 flex items-center justify-center shadow-sm hover:shadow-lg transition-shadow">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Stanley_Hand_Tools_logo.svg" alt="Stanley" class="h-16 w-auto max-w-[200px] object-contain">
+            <div class="bg-white rounded-xl py-3 px-3 sm:px-5 overflow-hidden flex items-center justify-center shadow-sm hover:shadow-lg transition-shadow">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Stanley_Hand_Tools_logo.svg" alt="Stanley" class="h-12 sm:h-14 max-w-full object-contain">
             </div>
-            <div class="bg-white rounded-2xl h-32 px-6 flex items-center justify-center shadow-sm hover:shadow-lg transition-shadow">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/d/de/Milwaukee_Logo.svg" alt="Milwaukee" class="h-16 w-auto max-w-[200px] object-contain">
+            <div class="bg-white rounded-xl py-3 px-3 sm:px-5 overflow-hidden flex items-center justify-center shadow-sm hover:shadow-lg transition-shadow">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/de/Milwaukee_Logo.svg" alt="Milwaukee" class="h-12 sm:h-14 max-w-full object-contain">
             </div>
-            <div class="bg-white rounded-2xl h-32 px-6 flex items-center justify-center shadow-sm hover:shadow-lg transition-shadow">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Skil_logo_2019.svg" alt="SKIL" class="h-16 w-auto max-w-[200px] object-contain">
+            <div class="bg-white rounded-xl py-3 px-3 sm:px-5 overflow-hidden flex items-center justify-center shadow-sm hover:shadow-lg transition-shadow">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Skil_logo_2019.svg" alt="SKIL" class="h-12 sm:h-14 max-w-full object-contain">
             </div>
-            <div class="bg-white rounded-2xl h-32 px-6 flex items-center justify-center shadow-sm hover:shadow-lg transition-shadow">
-                <img src="https://www.sharkbite.com/themes/custom/sharkbite/logo.svg" alt="SharkBite" class="h-16 w-auto max-w-[200px] object-contain">
+            <div class="bg-gray-100 border border-gray-300 rounded-xl py-3 px-3 sm:px-5 overflow-hidden flex items-center justify-center shadow-sm hover:shadow-lg transition-shadow">
+                <img src="https://www.sharkbite.com/themes/custom/sharkbite/logo.svg" alt="SharkBite" class="h-12 sm:h-14 max-w-full object-contain">
             </div>
-            <div class="bg-white rounded-2xl h-32 px-6 flex items-center justify-center shadow-sm hover:shadow-lg transition-shadow">
-                <img src="https://static.cdnlogo.com/logos/3/70/3m.svg" alt="3M" class="h-16 w-auto max-w-[200px] object-contain">
+            <div class="bg-white rounded-xl py-3 px-3 sm:px-5 overflow-hidden flex items-center justify-center shadow-sm hover:shadow-lg transition-shadow">
+                <img src="https://static.cdnlogo.com/logos/3/70/3m.svg" alt="3M" class="h-12 sm:h-14 max-w-full object-contain">
             </div>
-            <div class="bg-white rounded-2xl h-32 px-6 flex items-center justify-center shadow-sm hover:shadow-lg transition-shadow">
-                <img src="https://static.cdnlogo.com/logos/s/66/stih.svg" alt="Stihl" class="h-16 w-auto max-w-[200px] object-contain">
+            <div class="bg-white rounded-xl py-3 px-3 sm:px-5 overflow-hidden flex items-center justify-center shadow-sm hover:shadow-lg transition-shadow">
+                <img src="https://static.cdnlogo.com/logos/s/66/stih.svg" alt="Stihl" class="h-12 sm:h-14 max-w-full object-contain">
             </div>
-            <div class="bg-white rounded-2xl h-32 px-6 flex items-center justify-center shadow-sm hover:shadow-lg transition-shadow">
-                <img src="https://foxfarm.com/wp-content/themes/g5_helium/custom/images/logo-big.png" alt="Happy Frog by FoxFarm" class="h-16 w-auto max-w-[200px] object-contain">
+            <div class="bg-white rounded-xl py-3 px-3 sm:px-5 overflow-hidden flex items-center justify-center shadow-sm hover:shadow-lg transition-shadow">
+                <img src="https://foxfarm.com/wp-content/themes/g5_helium/custom/images/logo-big.png" alt="Happy Frog by FoxFarm" class="h-12 sm:h-14 max-w-full object-contain">
             </div>
         </div>
     </div>
@@ -92,6 +87,9 @@
                 <p class="mt-6 text-gray-600 leading-relaxed text-lg">
                     We're more than just a retail store. Our in-house service department is equipped to handle a wide range of jobs so you don't have to go searching all over town.
                 </p>
+                <div class="mt-6 rounded-xl overflow-hidden shadow-md">
+                    <img src="{{ url_for('static', filename='IMG_1455.JPG') }}" alt="SKIL power tools at Franklinville Hardware" class="w-full h-48 sm:h-56 object-cover">
+                </div>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 reveal-stagger">
                 <div class="bg-navy-lighter rounded-xl p-5 flex items-start space-x-3">
@@ -184,7 +182,15 @@
                 <img src="https://static.cdnlogo.com/logos/k/36/krylon.svg" alt="Krylon" class="h-12 w-auto max-w-[160px] object-contain">
             </div>
         </div>
-        <div class="mt-10 reveal reveal-scale">
+        <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 reveal-stagger">
+            <div class="rounded-xl overflow-hidden shadow-md aspect-[4/3]">
+                <img src="{{ url_for('static', filename='IMG_1442.JPG') }}" alt="Stains and finishes selection" class="w-full h-full object-cover">
+            </div>
+            <div class="rounded-xl overflow-hidden shadow-md aspect-[4/3]">
+                <img src="{{ url_for('static', filename='IMG_1443.JPG') }}" alt="Paint and stain aisle" class="w-full h-full object-cover">
+            </div>
+        </div>
+        <div class="mt-8 reveal reveal-scale">
             <div class="bg-white rounded-2xl p-8 shadow-sm max-w-2xl mx-auto text-center">
                 <div class="w-14 h-14 bg-brand-red/10 rounded-full flex items-center justify-center mx-auto mb-4">
                     <svg class="w-7 h-7 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">

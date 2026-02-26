@@ -5,15 +5,9 @@
 {% block content %}
 <!-- Hero Section -->
 <section class="relative bg-navy overflow-hidden">
-    <div class="absolute inset-0 opacity-10">
-        <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <defs>
-                <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
-                    <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-width="0.5"/>
-                </pattern>
-            </defs>
-            <rect width="100" height="100" fill="url(#grid)"/>
-        </svg>
+    <div class="absolute inset-0">
+        <img src="{{ url_for('static', filename='IMG_1459.JPG') }}" alt="" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-navy/80"></div>
     </div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
         <div class="text-center">
@@ -94,61 +88,94 @@
             <h2 class="text-2xl md:text-3xl font-bold text-navy">Trusted Brands We Carry</h2>
             <div class="mt-3 w-16 h-1 bg-brand-red mx-auto rounded"></div>
         </div>
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 max-w-6xl mx-auto reveal-stagger">
-            <div class="bg-white rounded-2xl h-32 px-6 shadow-sm hover:shadow-lg transition-shadow flex items-center justify-center">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/DeWalt_Logo.svg" alt="DeWalt" class="h-16 w-auto max-w-[200px] object-contain">
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 max-w-6xl mx-auto reveal-stagger">
+            <div class="bg-white rounded-xl py-3 px-3 sm:px-5 overflow-hidden shadow-sm hover:shadow-lg transition-shadow flex items-center justify-center">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/DeWalt_Logo.svg" alt="DeWalt" class="h-12 sm:h-14 max-w-full object-contain">
             </div>
-            <div class="bg-white rounded-2xl h-32 px-6 shadow-sm hover:shadow-lg transition-shadow flex items-center justify-center">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Stanley_Hand_Tools_logo.svg" alt="Stanley" class="h-16 w-auto max-w-[200px] object-contain">
+            <div class="bg-white rounded-xl py-3 px-3 sm:px-5 overflow-hidden shadow-sm hover:shadow-lg transition-shadow flex items-center justify-center">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Stanley_Hand_Tools_logo.svg" alt="Stanley" class="h-12 sm:h-14 max-w-full object-contain">
             </div>
-            <div class="bg-white rounded-2xl h-32 px-6 shadow-sm hover:shadow-lg transition-shadow flex items-center justify-center">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/d/de/Milwaukee_Logo.svg" alt="Milwaukee" class="h-16 w-auto max-w-[200px] object-contain">
+            <div class="bg-white rounded-xl py-3 px-3 sm:px-5 overflow-hidden shadow-sm hover:shadow-lg transition-shadow flex items-center justify-center">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/de/Milwaukee_Logo.svg" alt="Milwaukee" class="h-12 sm:h-14 max-w-full object-contain">
             </div>
-            <div class="bg-white rounded-2xl h-32 px-6 shadow-sm hover:shadow-lg transition-shadow flex items-center justify-center">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Skil_logo_2019.svg" alt="SKIL" class="h-16 w-auto max-w-[200px] object-contain">
+            <div class="bg-white rounded-xl py-3 px-3 sm:px-5 overflow-hidden shadow-sm hover:shadow-lg transition-shadow flex items-center justify-center">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Skil_logo_2019.svg" alt="SKIL" class="h-12 sm:h-14 max-w-full object-contain">
             </div>
-            <div class="bg-white rounded-2xl h-32 px-6 shadow-sm hover:shadow-lg transition-shadow flex items-center justify-center">
-                <img src="https://www.sharkbite.com/themes/custom/sharkbite/logo.svg" alt="SharkBite" class="h-16 w-auto max-w-[200px] object-contain">
+            <div class="bg-gray-100 border border-gray-300 rounded-xl py-3 px-3 sm:px-5 overflow-hidden shadow-sm hover:shadow-lg transition-shadow flex items-center justify-center">
+                <img src="https://www.sharkbite.com/themes/custom/sharkbite/logo.svg" alt="SharkBite" class="h-12 sm:h-14 max-w-full object-contain">
             </div>
-            <div class="bg-white rounded-2xl h-32 px-6 shadow-sm hover:shadow-lg transition-shadow flex items-center justify-center">
-                <img src="https://static.cdnlogo.com/logos/3/70/3m.svg" alt="3M" class="h-16 w-auto max-w-[200px] object-contain">
+            <div class="bg-white rounded-xl py-3 px-3 sm:px-5 overflow-hidden shadow-sm hover:shadow-lg transition-shadow flex items-center justify-center">
+                <img src="https://static.cdnlogo.com/logos/3/70/3m.svg" alt="3M" class="h-12 sm:h-14 max-w-full object-contain">
             </div>
-            <div class="bg-white rounded-2xl h-32 px-6 shadow-sm hover:shadow-lg transition-shadow flex items-center justify-center">
-                <img src="https://static.cdnlogo.com/logos/s/66/stih.svg" alt="Stihl" class="h-16 w-auto max-w-[200px] object-contain">
+            <div class="bg-white rounded-xl py-3 px-3 sm:px-5 overflow-hidden shadow-sm hover:shadow-lg transition-shadow flex items-center justify-center">
+                <img src="https://static.cdnlogo.com/logos/s/66/stih.svg" alt="Stihl" class="h-12 sm:h-14 max-w-full object-contain">
             </div>
-            <div class="bg-white rounded-2xl h-32 px-6 shadow-sm hover:shadow-lg transition-shadow flex items-center justify-center">
-                <img src="https://foxfarm.com/wp-content/themes/g5_helium/custom/images/logo-big.png" alt="Happy Frog by FoxFarm" class="h-16 w-auto max-w-[200px] object-contain">
+            <div class="bg-white rounded-xl py-3 px-3 sm:px-5 overflow-hidden shadow-sm hover:shadow-lg transition-shadow flex items-center justify-center">
+                <img src="https://foxfarm.com/wp-content/themes/g5_helium/custom/images/logo-big.png" alt="Happy Frog by FoxFarm" class="h-12 sm:h-14 max-w-full object-contain">
             </div>
         </div>
 
         <div class="mt-10 reveal reveal-up">
             <p class="text-center text-gray-500 text-sm font-medium uppercase tracking-wider mb-4">Paint Department</p>
             <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 max-w-6xl mx-auto reveal-stagger">
-                <div class="bg-white rounded-2xl h-24 px-4 shadow-sm hover:shadow-lg transition-shadow flex items-center justify-center">
-                    <img src="https://static.cdnlogo.com/logos/t/80/the-valspar-corporation.svg" alt="Valspar" class="h-12 w-auto max-w-[160px] object-contain">
+                <div class="bg-white rounded-xl py-3 px-3 overflow-hidden shadow-sm hover:shadow-lg transition-shadow flex items-center justify-center">
+                    <img src="https://static.cdnlogo.com/logos/t/80/the-valspar-corporation.svg" alt="Valspar" class="h-12 sm:h-14 max-w-full object-contain">
                 </div>
-                <div class="bg-white rounded-2xl h-24 px-4 shadow-sm hover:shadow-lg transition-shadow flex items-center justify-center">
-                    <span class="text-gray-700 font-extrabold text-xl tracking-wide">Flood</span>
+                <div class="bg-white rounded-xl py-3 px-3 overflow-hidden shadow-sm hover:shadow-lg transition-shadow flex items-center justify-center">
+                    <span class="text-gray-700 font-extrabold text-2xl tracking-wide">Flood</span>
                 </div>
-                <div class="bg-white rounded-2xl h-24 px-4 shadow-sm hover:shadow-lg transition-shadow flex items-center justify-center">
-                    <img src="https://www.cabotstain.com/content/dam/cbg-cabot/asset-clean-up/cabot-main-logo.png" alt="Cabot" class="h-12 w-auto max-w-[160px] object-contain">
+                <div class="bg-white rounded-xl py-3 px-3 overflow-hidden shadow-sm hover:shadow-lg transition-shadow flex items-center justify-center">
+                    <img src="https://www.cabotstain.com/content/dam/cbg-cabot/asset-clean-up/cabot-main-logo.png" alt="Cabot" class="h-12 sm:h-14 max-w-full object-contain">
                 </div>
-                <div class="bg-white rounded-2xl h-24 px-4 shadow-sm hover:shadow-lg transition-shadow flex items-center justify-center">
-                    <img src="https://static.cdnlogo.com/logos/m/15/minwax.svg" alt="Minwax" class="h-12 w-auto max-w-[160px] object-contain">
+                <div class="bg-white rounded-xl py-3 px-3 overflow-hidden shadow-sm hover:shadow-lg transition-shadow flex items-center justify-center">
+                    <img src="https://static.cdnlogo.com/logos/m/15/minwax.svg" alt="Minwax" class="h-12 sm:h-14 max-w-full object-contain">
                 </div>
-                <div class="bg-white rounded-2xl h-24 px-4 shadow-sm hover:shadow-lg transition-shadow flex items-center justify-center">
-                    <img src="https://cdn.worldvectorlogo.com/logos/rust-oleum-1.svg" alt="Rust-Oleum" class="h-12 w-auto max-w-[160px] object-contain">
+                <div class="bg-white rounded-xl py-3 px-3 overflow-hidden shadow-sm hover:shadow-lg transition-shadow flex items-center justify-center">
+                    <img src="https://cdn.worldvectorlogo.com/logos/rust-oleum-1.svg" alt="Rust-Oleum" class="h-12 sm:h-14 max-w-full object-contain">
                 </div>
-                <div class="bg-white rounded-2xl h-24 px-4 shadow-sm hover:shadow-lg transition-shadow flex items-center justify-center">
-                    <img src="https://static.cdnlogo.com/logos/k/36/krylon.svg" alt="Krylon" class="h-12 w-auto max-w-[160px] object-contain">
+                <div class="bg-white rounded-xl py-3 px-3 overflow-hidden shadow-sm hover:shadow-lg transition-shadow flex items-center justify-center">
+                    <img src="https://static.cdnlogo.com/logos/k/36/krylon.svg" alt="Krylon" class="h-12 sm:h-14 max-w-full object-contain">
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Welcome / CTA Section -->
+<!-- Inside Our Store -->
 <section class="py-16 md:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10 reveal reveal-up">
+            <h2 class="text-3xl md:text-4xl font-bold text-navy">Inside Our Store</h2>
+            <div class="mt-3 w-16 h-1 bg-brand-red mx-auto rounded"></div>
+            <p class="mt-4 text-gray-600 text-lg max-w-2xl mx-auto">
+                8,000 square feet packed with everything you need — from power tools and plumbing to paint and pool supplies.
+            </p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 reveal-stagger">
+            <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow aspect-[4/3]">
+                <img src="{{ url_for('static', filename='IMG_1460.JPG') }}" alt="DeWalt hand tools" class="w-full h-full object-cover">
+            </div>
+            <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow aspect-[4/3]">
+                <img src="{{ url_for('static', filename='IMG_1454.JPG') }}" alt="Hand tools and pliers" class="w-full h-full object-cover">
+            </div>
+            <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow aspect-[4/3]">
+                <img src="{{ url_for('static', filename='IMG_1457.JPG') }}" alt="Work gloves selection" class="w-full h-full object-cover">
+            </div>
+            <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow aspect-[4/3]">
+                <img src="{{ url_for('static', filename='IMG_1442.JPG') }}" alt="Stains and finishes aisle" class="w-full h-full object-cover">
+            </div>
+            <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow aspect-[4/3]">
+                <img src="{{ url_for('static', filename='IMG_1451.JPG') }}" alt="Moen faucets and plumbing" class="w-full h-full object-cover">
+            </div>
+            <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow aspect-[4/3]">
+                <img src="{{ url_for('static', filename='IMG_1441.JPG') }}" alt="Pool supplies" class="w-full h-full object-cover">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Welcome / CTA Section -->
+<section class="py-16 md:py-20 bg-navy-lighter">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="max-w-3xl mx-auto text-center reveal reveal-up">
             <h2 class="text-3xl md:text-4xl font-bold text-navy">Welcome to Franklinville Hardware</h2>

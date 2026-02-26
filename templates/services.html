@@ -4,8 +4,12 @@
 
 {% block content %}
 <!-- Page Header -->
-<section class="bg-navy py-16 md:py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<section class="relative bg-navy py-16 md:py-20 overflow-hidden">
+    <div class="absolute inset-0">
+        <img src="{{ url_for('static', filename='IMG_1453.JPG') }}" alt="" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-navy/80"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 class="text-4xl md:text-5xl font-bold text-white">Our Services</h1>
         <p class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
             More than just a store — we offer a range of services to help you get the job done.
@@ -32,16 +36,16 @@
             </div>
 
             <!-- Paint Mixing -->
-            <div class="bg-gray-50 rounded-xl p-8 border border-gray-100 hover:shadow-lg transition-shadow group">
-                <div class="w-14 h-14 bg-navy rounded-lg flex items-center justify-center mb-5 group-hover:bg-brand-red transition-colors">
-                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
-                    </svg>
+            <div class="bg-gray-50 rounded-xl overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow group">
+                <div class="h-40 overflow-hidden">
+                    <img src="{{ url_for('static', filename='IMG_1443.JPG') }}" alt="Paint and stain selection" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                 </div>
-                <h3 class="text-xl font-bold text-navy mb-3">Paint Mixing</h3>
-                <p class="text-gray-600 leading-relaxed">
-                    Find the perfect color for your project. We offer custom paint mixing with a wide selection of colors and finishes.
-                </p>
+                <div class="p-8 pt-5">
+                    <h3 class="text-xl font-bold text-navy mb-3">Paint Mixing</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Find the perfect color for your project. We offer custom paint mixing with a wide selection of colors and finishes.
+                    </p>
+                </div>
             </div>
 
             <!-- Tool Rental -->
@@ -59,42 +63,42 @@
             </div>
 
             <!-- Plumbing Supplies -->
-            <div class="bg-gray-50 rounded-xl p-8 border border-gray-100 hover:shadow-lg transition-shadow group">
-                <div class="w-14 h-14 bg-navy rounded-lg flex items-center justify-center mb-5 group-hover:bg-brand-red transition-colors">
-                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
-                    </svg>
+            <div class="bg-gray-50 rounded-xl overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow group">
+                <div class="h-40 overflow-hidden">
+                    <img src="{{ url_for('static', filename='IMG_1451.JPG') }}" alt="Moen faucets and plumbing fixtures" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                 </div>
-                <h3 class="text-xl font-bold text-navy mb-3">Plumbing Supplies</h3>
-                <p class="text-gray-600 leading-relaxed">
-                    From pipes and fittings to faucets and fixtures, we have everything you need for plumbing repairs and installations.
-                </p>
+                <div class="p-8 pt-5">
+                    <h3 class="text-xl font-bold text-navy mb-3">Plumbing Supplies</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        From pipes and fittings to faucets and fixtures, we have everything you need for plumbing repairs and installations.
+                    </p>
+                </div>
             </div>
 
             <!-- Electrical Supplies -->
-            <div class="bg-gray-50 rounded-xl p-8 border border-gray-100 hover:shadow-lg transition-shadow group">
-                <div class="w-14 h-14 bg-navy rounded-lg flex items-center justify-center mb-5 group-hover:bg-brand-red transition-colors">
-                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                    </svg>
+            <div class="bg-gray-50 rounded-xl overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow group">
+                <div class="h-40 overflow-hidden">
+                    <img src="{{ url_for('static', filename='IMG_1445.JPG') }}" alt="Light bulbs and electrical supplies" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                 </div>
-                <h3 class="text-xl font-bold text-navy mb-3">Electrical Supplies</h3>
-                <p class="text-gray-600 leading-relaxed">
-                    Wiring, outlets, breakers, and more. We stock a full range of electrical supplies for residential and light commercial work.
-                </p>
+                <div class="p-8 pt-5">
+                    <h3 class="text-xl font-bold text-navy mb-3">Electrical Supplies</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Wiring, outlets, breakers, and more. We stock a full range of electrical supplies for residential and light commercial work.
+                    </p>
+                </div>
             </div>
 
             <!-- Seasonal Products -->
-            <div class="bg-gray-50 rounded-xl p-8 border border-gray-100 hover:shadow-lg transition-shadow group">
-                <div class="w-14 h-14 bg-navy rounded-lg flex items-center justify-center mb-5 group-hover:bg-brand-red transition-colors">
-                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
-                    </svg>
+            <div class="bg-gray-50 rounded-xl overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow group">
+                <div class="h-40 overflow-hidden">
+                    <img src="{{ url_for('static', filename='IMG_1441.JPG') }}" alt="Pool and seasonal supplies" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                 </div>
-                <h3 class="text-xl font-bold text-navy mb-3">Seasonal Products</h3>
-                <p class="text-gray-600 leading-relaxed">
-                    From snow shovels in winter to garden supplies in spring, we keep our shelves stocked with what you need for every season.
-                </p>
+                <div class="p-8 pt-5">
+                    <h3 class="text-xl font-bold text-navy mb-3">Seasonal Products</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        From snow shovels in winter to garden supplies in spring, we keep our shelves stocked with what you need for every season.
+                    </p>
+                </div>
             </div>
 
             <!-- Special Orders -->
@@ -111,16 +115,16 @@
             </div>
 
             <!-- Lawn & Garden -->
-            <div class="bg-gray-50 rounded-xl p-8 border border-gray-100 hover:shadow-lg transition-shadow group">
-                <div class="w-14 h-14 bg-navy rounded-lg flex items-center justify-center mb-5 group-hover:bg-brand-red transition-colors">
-                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
-                    </svg>
+            <div class="bg-gray-50 rounded-xl overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow group">
+                <div class="h-40 overflow-hidden">
+                    <img src="{{ url_for('static', filename='IMG_1450.JPG') }}" alt="Lawn care and garden supplies" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                 </div>
-                <h3 class="text-xl font-bold text-navy mb-3">Lawn &amp; Garden</h3>
-                <p class="text-gray-600 leading-relaxed">
-                    Keep your yard looking great with our selection of lawn care products, gardening tools, and outdoor supplies.
-                </p>
+                <div class="p-8 pt-5">
+                    <h3 class="text-xl font-bold text-navy mb-3">Lawn &amp; Garden</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Keep your yard looking great with our selection of lawn care products, gardening tools, and outdoor supplies.
+                    </p>
+                </div>
             </div>
 
             <!-- Expert Guidance -->
