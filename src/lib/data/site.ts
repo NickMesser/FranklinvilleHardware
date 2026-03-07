@@ -29,6 +29,8 @@ export type BrandCard =
 export type ImageCard = {
 	src: string;
 	alt: string;
+	containerClass?: string;
+	imageClass?: string;
 };
 
 export type CopyCard = {
@@ -319,6 +321,16 @@ export const servicesList: ServiceCard[] = [
 		image: {
 			src: 'https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1200&q=80',
 			alt: 'Stock image of packaged boxes ready for shipment'
+		}
+	},
+	{
+		title: 'Authorized UPS Dropoff',
+		body: 'Drop off your prepaid UPS packages at the store and take care of shipping while you are already in town.',
+		image: {
+			src: 'https://upload.wikimedia.org/wikipedia/commons/6/6b/United_Parcel_Service_logo_2014.svg',
+			alt: 'UPS logo',
+			containerClass: 'bg-white p-8',
+			imageClass: 'object-contain'
 		}
 	},
 	{

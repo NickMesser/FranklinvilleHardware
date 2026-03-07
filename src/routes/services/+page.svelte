@@ -35,11 +35,11 @@
 			{#each servicesList as service}
 				<article class="surface-card overflow-hidden rounded-[2rem]">
 					{#if service.image}
-						<div class="h-48 overflow-hidden">
+						<div class={`h-48 overflow-hidden ${service.image.containerClass ?? ''}`}>
 							<img
 								src={service.image.src}
 								alt={service.image.alt}
-								class="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+								class={`h-full w-full transition-transform duration-500 hover:scale-105 ${service.image.imageClass ?? 'object-cover'}`}
 								loading="lazy"
 							/>
 						</div>
