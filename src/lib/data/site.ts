@@ -44,6 +44,7 @@ export type ServiceCard = {
 	body: string;
 	icon?: IconName;
 	image?: ImageCard;
+	href?: string;
 };
 
 export type IconName =
@@ -68,10 +69,17 @@ export type IconName =
 
 export const siteMeta = {
 	name: 'Franklinville Hardware',
+	siteUrl: 'https://franklinvillehardware.com',
 	tagline: 'Your trusted hometown hardware store in Franklinville, NY.',
 	description:
-		'Franklinville Hardware is a full-service hometown hardware store offering trusted brands, project advice, paint matching, propane, repairs, and more.',
+		'Franklinville Hardware is a full-service hardware store in Franklinville, NY offering key cutting, paint matching, pump propane tank refills, and authorized Stihl dealer and service support.',
 	address: '99 N Main St, Franklinville, NY 14737',
+	city: 'Franklinville',
+	state: 'NY',
+	postalCode: '14737',
+	country: 'US',
+	latitude: 42.3373,
+	longitude: -78.4593,
 	phoneDisplay: '(716) 676-4164',
 	phoneHref: 'tel:+17166764164',
 	email: 'info@franklinvillehardware.com',
@@ -80,6 +88,7 @@ export const siteMeta = {
 	mapUrl: 'https://maps.google.com/?q=99+N+Main+St+Franklinville+NY+14737',
 	mapEmbedUrl:
 		'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2952.5!2d-78.4593!3d42.3373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d37b1e3f9e3c0b%3A0x8f2c1e4d5a6b7c8d!2s99%20N%20Main%20St%2C%20Franklinville%2C%20NY%2014737!5e0!3m2!1sen!2sus!4v1700000000000',
+	socialImage: '/IMG_1970 Large.jpeg',
 	yearOpened: 2021
 } as const;
 
@@ -115,7 +124,7 @@ export const homeFeatures: CopyCard[] = [
 	},
 	{
 		title: 'Full-Service Shop',
-		body: 'Sharpening, glass cutting, screen repair, Stihl service, propane, and paint matching all under one roof.',
+		body: 'Key cutting, paint matching, screen repair, glass cutting, pump propane refills, and authorized Stihl dealer and service support all under one roof.',
 		icon: 'wrench'
 	},
 	{
@@ -253,15 +262,48 @@ export const serviceDepartmentHighlights: CopyCard[] = [
 	},
 	{
 		title: 'Stihl Service',
-		body: 'Authorized service for your Stihl outdoor power equipment.',
+		body: 'Authorized Stihl dealer and service support for outdoor power equipment, parts, and repairs.',
 		icon: 'check'
 	},
 	{
-		title: 'Propane',
-		body: 'Convenient propane pumping available on-site.',
+		title: 'Pump Propane Refills',
+		body: 'On-site pump propane for small tank and grill tank refills.',
 		icon: 'check'
 	}
 ];
+
+export const featuredServiceLinks = [
+	{
+		title: 'Key Cutting',
+		href: '/services/key-cutting',
+		description: 'Fast spare key cutting for homes, padlocks, and everyday needs.'
+	},
+	{
+		title: 'Paint Matching',
+		href: '/services/paint-matching',
+		description: 'Bring in a sample and get local paint matching help in Franklinville.'
+	},
+	{
+		title: 'Pump Propane Refills',
+		href: '/services/propane-tank-refill',
+		description: 'Refill grill tanks and other portable propane cylinders on-site.'
+	},
+	{
+		title: 'Authorized Stihl Dealer and Service',
+		href: '/services/stihl-service',
+		description: 'Shop Stihl equipment and get local service support from our team.'
+	},
+	{
+		title: 'Screen and Window Repair',
+		href: '/services/screen-window-repair',
+		description: 'Get help with torn screens, worn frames, and seasonal window fixes.'
+	},
+	{
+		title: 'Glass and Plexiglass Cutting',
+		href: '/services/glass-plexiglass-cutting',
+		description: 'Custom cuts for repairs, storm windows, and everyday projects.'
+	}
+] as const;
 
 export const missionValues: CopyCard[] = [
 	{
@@ -289,16 +331,54 @@ export const missionValues: CopyCard[] = [
 export const servicesList: ServiceCard[] = [
 	{
 		title: 'Key Cutting',
-		body: 'Need a spare key? We cut keys for homes, vehicles, and more while you wait.',
+		body: 'Need a spare key? We cut keys for homes, padlocks, and many everyday needs while you shop.',
 		image: {
 			src: '/IMG_1967 Large.jpeg',
 			alt: 'Key cutting station and key wall at Franklinville Hardware'
-		}
+		},
+		href: '/services/key-cutting'
 	},
 	{
-		title: 'Paint Mixing',
-		body: 'Find the right finish and color for your project with custom paint mixing.',
-		image: { src: '/IMG_1966 Large.jpeg', alt: 'Valspar paint color gallery and mixing area' }
+		title: 'Paint Matching',
+		body: 'Find the right finish and color for your project with custom paint matching and in-store guidance.',
+		image: { src: '/IMG_1966 Large.jpeg', alt: 'Valspar paint color gallery and mixing area' },
+		href: '/services/paint-matching'
+	},
+	{
+		title: 'Pump Propane Refills',
+		body: 'Bring in your grill tank or other portable cylinder for an on-site propane refill in Franklinville.',
+		image: {
+			src: '/IMG_1975 Large.jpeg',
+			alt: 'Outdoor grilling supplies and accessories inside Franklinville Hardware'
+		},
+		href: '/services/propane-tank-refill'
+	},
+	{
+		title: 'Authorized Stihl Dealer and Service',
+		body: 'Shop Stihl equipment and get authorized local service support for outdoor power equipment.',
+		image: {
+			src: '/IMG_1968 Large.jpeg',
+			alt: 'Stihl outdoor power equipment section at Franklinville Hardware'
+		},
+		href: '/services/stihl-service'
+	},
+	{
+		title: 'Screen and Window Repair',
+		body: 'Bring in worn or damaged screens and windows for practical repair help close to home.',
+		image: {
+			src: '/IMG_1972 Large.jpeg',
+			alt: 'Hardware aisle with home repair supplies at Franklinville Hardware'
+		},
+		href: '/services/screen-window-repair'
+	},
+	{
+		title: 'Glass and Plexiglass Cutting',
+		body: 'Get custom glass and plexiglass cuts for repairs, storm windows, and project work.',
+		image: {
+			src: '/IMG_1972 Large.jpeg',
+			alt: 'Fasteners and repair materials inside Franklinville Hardware'
+		},
+		href: '/services/glass-plexiglass-cutting'
 	},
 	{
 		title: 'Plumbing Supplies',

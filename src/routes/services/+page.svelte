@@ -2,21 +2,20 @@
 	import { reveal } from '$lib/actions/reveal';
 	import HeroBanner from '$lib/components/HeroBanner.svelte';
 	import Icon from '$lib/components/Icon.svelte';
+	import SeoHead from '$lib/components/SeoHead.svelte';
 	import SectionHeading from '$lib/components/SectionHeading.svelte';
 	import { servicesList, siteMeta } from '$lib/data/site';
 </script>
 
-<svelte:head>
-	<title>Services | Franklinville Hardware</title>
-	<meta
-		name="description"
-		content="Explore the in-store services, paint help, special orders, and project support available at Franklinville Hardware."
-	/>
-</svelte:head>
+<SeoHead
+	title="Hardware Store Services in Franklinville, NY | Franklinville Hardware"
+	description="Explore hardware store services in Franklinville, NY including key cutting, paint matching, pump propane tank refills, and authorized Stihl dealer and service support."
+	path="/services"
+/>
 
 <HeroBanner
-	title="Practical services that help projects keep moving."
-	intro="Franklinville Hardware offers more than shelves of product. We also help with paint, repair needs, special orders, and the everyday service work that saves time."
+	title="Local hardware store services that save time and extra trips."
+	intro="Franklinville Hardware offers practical in-store services for Franklinville projects, including key cutting, paint matching, pump propane refills, screen repair, glass cutting, and authorized Stihl dealer and service support."
 	image="/IMG_1967 Large.jpeg"
 	kicker="Our services"
 />
@@ -27,7 +26,7 @@
 			<SectionHeading
 				eyebrow="What we offer"
 				title="Project support that goes beyond retail."
-				intro="Whether you need a quick key cut, the right paint mix, or help tracking down a specialty item, our team is here to help."
+				intro="Whether you need a quick key cut, paint matching, a grill tank refill, or help with Stihl equipment, our team is here to help."
 			/>
 		</div>
 
@@ -53,6 +52,9 @@
 						{/if}
 						<h3 class={`text-base font-bold text-navy-dark ${service.icon ? 'mt-5' : ''}`}>{service.title}</h3>
 						<p class="mt-3 leading-7 text-slate-600">{service.body}</p>
+						{#if service.href}
+							<a href={service.href} class="mt-5 inline-block text-sm font-semibold text-brand-red">Learn More</a>
+						{/if}
 					</div>
 				</article>
 			{/each}
@@ -68,7 +70,7 @@
 				If you do not see it on the shelf, ask us.
 			</h2>
 			<p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-				We are always happy to help track down products, talk through options, and point you toward the best fit for the job.
+				We are always happy to help track down products, talk through options, and point you toward the best fit for the job, whether that means service work in-store or the right supplies to finish it yourself.
 			</p>
 			<div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
 				<a href="/contact" class="button-primary">Contact Us</a>

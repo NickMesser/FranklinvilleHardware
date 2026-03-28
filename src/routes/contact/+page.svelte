@@ -2,21 +2,20 @@
 	import { reveal } from '$lib/actions/reveal';
 	import HeroBanner from '$lib/components/HeroBanner.svelte';
 	import Icon from '$lib/components/Icon.svelte';
+	import SeoHead from '$lib/components/SeoHead.svelte';
 	import SectionHeading from '$lib/components/SectionHeading.svelte';
-	import { contactHighlights, siteMeta, storeHours } from '$lib/data/site';
+	import { contactHighlights, featuredServiceLinks, siteMeta, storeHours } from '$lib/data/site';
 </script>
 
-<svelte:head>
-	<title>Contact | Franklinville Hardware</title>
-	<meta
-		name="description"
-		content="Visit, call, or email Franklinville Hardware. See our hours, address, and map."
-	/>
-</svelte:head>
+<SeoHead
+	title="Contact Franklinville Hardware | Franklinville, NY Hardware Store"
+	description="Visit, call, or email Franklinville Hardware in Franklinville, NY. Get hours, directions, and help with key cutting, paint matching, propane tank refills, and Stihl service support."
+	path="/contact"
+/>
 
 <HeroBanner
 	title="Stop by, call, or send us a note."
-	intro="Questions about a project, product availability, or services? Reach out and we'll help point you in the right direction."
+	intro="Questions about a project, product availability, or local services like key cutting, paint matching, propane tank refills, or Stihl support? Reach out and we'll help point you in the right direction."
 	image="/IMG_1970 Large.jpeg"
 	kicker="Contact us"
 />
@@ -29,7 +28,7 @@
 					align="left"
 					eyebrow="Get in touch"
 					title="The easiest way to reach us."
-					intro="Visit the store, browse current inventory online, or email us and we'll get back to you as soon as we can."
+					intro="Visit the store, browse current inventory online, or email us and we'll get back to you as soon as we can. Calling ahead is always a smart move if you want to confirm a specific service or item."
 				/>
 			</div>
 
@@ -87,10 +86,31 @@
 				<div class="mt-8 rounded-3xl border border-dashed border-slate-300 bg-slate-50 p-5">
 					<p class="text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">Online contact note</p>
 					<p class="mt-3 leading-7 text-slate-600">
-						We're keeping online contact simple for now. For the fastest response, call or email us directly instead of filling out a form that may delay your message.
+						We're keeping online contact simple for now. For the fastest response, call or email us directly instead of filling out a form that may delay your message, especially if you want to confirm a key type, propane tank refill question, or Stihl service need.
 					</p>
 				</div>
 			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section-space bg-white">
+	<div class="page-shell">
+		<div use:reveal class="reveal">
+			<SectionHeading
+				eyebrow="Before you visit"
+				title="Popular service pages to review first."
+				intro="If you are planning a special trip, these pages answer the questions customers most often have before they stop in."
+			/>
+		</div>
+
+		<div use:reveal class="reveal-stagger mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+			{#each featuredServiceLinks as service}
+				<a href={service.href} class="surface-card rounded-3xl p-6 transition-transform duration-300 hover:-translate-y-1">
+					<h3 class="text-base font-bold text-navy-dark">{service.title}</h3>
+					<p class="mt-3 leading-7 text-slate-600">{service.description}</p>
+				</a>
+			{/each}
 		</div>
 	</div>
 </section>

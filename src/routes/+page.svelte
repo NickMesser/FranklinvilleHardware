@@ -3,8 +3,10 @@
 	import BrandGrid from '$lib/components/BrandGrid.svelte';
 	import HeroBanner from '$lib/components/HeroBanner.svelte';
 	import Icon from '$lib/components/Icon.svelte';
+	import SeoHead from '$lib/components/SeoHead.svelte';
 	import SectionHeading from '$lib/components/SectionHeading.svelte';
 	import {
+		featuredServiceLinks,
 		homeFeatures,
 		homeGallery,
 		hardwareBrands,
@@ -13,17 +15,15 @@
 	} from '$lib/data/site';
 </script>
 
-<svelte:head>
-	<title>Franklinville Hardware | Your Hometown Hardware Store</title>
-	<meta
-		name="description"
-		content="Visit Franklinville Hardware for trusted brands, service, paint help, and project advice in Franklinville, NY."
-	/>
-</svelte:head>
+<SeoHead
+	title="Hardware Store in Franklinville, NY | Franklinville Hardware"
+	description="Franklinville Hardware is your local hardware store in Franklinville, NY for key cutting, paint matching, pump propane tank refills, and authorized Stihl dealer and service support."
+	path="/"
+/>
 
 <HeroBanner
-	title="Your hometown hardware store for trusted brands and practical project help."
-	intro="8,000 square feet of tools, paint, plumbing, seasonal supplies, and full-service support for homeowners, contractors, and DIYers across Franklinville."
+	title="Your local hardware store in Franklinville, NY for everyday projects and service."
+	intro="Find tools, paint, plumbing, seasonal supplies, key cutting, paint matching, pump propane refills, and authorized Stihl dealer and service support all in one Franklinville stop."
 	image="/IMG_1970 Large.jpeg"
 	kicker="Local hardware store"
 >
@@ -39,7 +39,7 @@
 			<SectionHeading
 				eyebrow="Why Franklinville Hardware"
 				title="A better hardware experience for everyday projects."
-				intro="We focus on practical products, real service, and a store layout that makes it easy to get what you need without the big-box runaround."
+				intro="We focus on practical products, local service, and straightforward help so Franklinville homeowners, contractors, and DIYers can get what they need without the big-box runaround."
 			/>
 		</div>
 
@@ -57,13 +57,35 @@
 	</div>
 </section>
 
+<section class="section-space bg-white">
+	<div class="page-shell">
+		<div use:reveal class="reveal">
+			<SectionHeading
+				eyebrow="Popular local services"
+				title="More than shelves of hardware."
+				intro="Customers around Franklinville count on us for quick, practical services that save a trip out of town."
+			/>
+		</div>
+
+		<div use:reveal class="reveal-stagger mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+			{#each featuredServiceLinks as service}
+				<a href={service.href} class="surface-card rounded-[2rem] p-7 transition-transform duration-300 hover:-translate-y-1">
+					<h3 class="text-base font-bold text-navy-dark">{service.title}</h3>
+					<p class="mt-3 leading-7 text-slate-600">{service.description}</p>
+					<span class="mt-5 inline-block text-sm font-semibold text-brand-red">Learn More</span>
+				</a>
+			{/each}
+		</div>
+	</div>
+</section>
+
 <section class="section-space bg-navy-lighter/65">
 	<div class="page-shell">
 		<div use:reveal class="reveal">
 			<SectionHeading
 				eyebrow="Trusted brands"
 				title="Well-known names for jobs large and small."
-				intro="We stock the tools, repair products, and paint lines that homeowners and pros already know and trust."
+				intro="We stock the tools, repair products, paint lines, and outdoor power equipment brands that homeowners and pros already know and trust."
 			/>
 		</div>
 
@@ -108,7 +130,7 @@
 				Helpful service, practical inventory, and a store that still feels local.
 			</h2>
 			<p class="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600">
-				Since {siteMeta.yearOpened}, we've focused on making Franklinville Hardware the kind of place where you can ask questions, compare options, and leave ready to finish the job with confidence.
+				Since {siteMeta.yearOpened}, we've focused on making Franklinville Hardware the kind of place where you can ask questions, compare options, and leave ready to finish the job with confidence, whether you need a key cut, a propane tank refill, or the right part for a repair.
 			</p>
 			<div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
 				<a href="/about" class="button-primary">Learn More About Us</a>

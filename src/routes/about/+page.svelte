@@ -3,6 +3,7 @@
 	import BrandGrid from '$lib/components/BrandGrid.svelte';
 	import HeroBanner from '$lib/components/HeroBanner.svelte';
 	import Icon from '$lib/components/Icon.svelte';
+	import SeoHead from '$lib/components/SeoHead.svelte';
 	import SectionHeading from '$lib/components/SectionHeading.svelte';
 	import {
 		aboutStoryImages,
@@ -13,17 +14,15 @@
 	} from '$lib/data/site';
 </script>
 
-<svelte:head>
-	<title>About | Franklinville Hardware</title>
-	<meta
-		name="description"
-		content="Learn about Franklinville Hardware, our hometown approach, service department, and paint department."
-	/>
-</svelte:head>
+<SeoHead
+	title="About Franklinville Hardware | Local Hardware Store in Franklinville, NY"
+	description="Learn about Franklinville Hardware, our hometown approach, paint department, repair services, pump propane refills, and authorized Stihl dealer and service support in Franklinville, NY."
+	path="/about"
+/>
 
 <HeroBanner
-	title="Hardware, service, and hometown know-how in one place."
-	intro="Franklinville Hardware was built to bring dependable products, personal service, and practical project help back to the center of town."
+	title="A Franklinville hardware store built around practical service."
+	intro="Franklinville Hardware was built to bring dependable products, personal service, and practical project help back to the center of town for Franklinville and nearby communities."
 	image="/IMG_1972 Large.jpeg"
 	kicker="About us"
 />
@@ -42,7 +41,7 @@
 					From day one, the goal has been simple: create a store where neighbors can find what they need, get straightforward advice, and feel comfortable asking questions about the job in front of them.
 				</p>
 				<p>
-					Today, the 8,000-square-foot store is packed with dependable merchandise, trusted brands, and the kind of personal attention that helps homeowners and contractors make confident decisions.
+					Today, the 8,000-square-foot store is packed with dependable merchandise, trusted brands, and the kind of personal attention that helps homeowners and contractors make confident decisions about repairs, paint projects, outdoor equipment, and everyday maintenance.
 				</p>
 			</div>
 		</div>
@@ -75,7 +74,7 @@
 				align="left"
 				eyebrow="Service department"
 				title="More than a place to buy supplies."
-				intro="Our in-store services help you solve problems quickly without making extra stops around town."
+				intro="Our in-store services help you solve problems quickly without making extra stops around town, from key cutting and paint matching to pump propane refills and authorized Stihl dealer and service support."
 			/>
 			<div class="mt-8 overflow-hidden rounded-[2rem] shadow-card">
 				<img src={aboutStoryImages.service.src} alt={aboutStoryImages.service.alt} class="h-72 w-full object-cover" />
