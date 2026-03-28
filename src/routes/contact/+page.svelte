@@ -1,10 +1,28 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { reveal } from '$lib/actions/reveal';
 	import HeroBanner from '$lib/components/HeroBanner.svelte';
 	import Icon from '$lib/components/Icon.svelte';
 	import SeoHead from '$lib/components/SeoHead.svelte';
 	import SectionHeading from '$lib/components/SectionHeading.svelte';
-	import { contactHighlights, featuredServiceLinks, siteMeta, storeHours } from '$lib/data/site';
+	import {
+		contactHighlights,
+		featuredServiceLinks,
+		getActiveAnnouncements,
+		getActiveHoursOverrides,
+		siteMeta,
+		storeHours,
+		type HoursOverride,
+		type SiteAnnouncement
+	} from '$lib/data/site';
+
+	let activeAnnouncements: SiteAnnouncement[] = [];
+	let specialHours: HoursOverride[] = [];
+
+	onMount(() => {
+		activeAnnouncements = getActiveAnnouncements();
+		specialHours = getActiveHoursOverrides();
+	});
 </script>
 
 <SeoHead
@@ -59,8 +77,34 @@
 
 		<div use:reveal class="reveal">
 			<div class="surface-card rounded-[2rem] p-8">
-				<p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-red">Store hours</p>
+				<p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-red">
+					{specialHours.length ? 'Store hours and announcements' : 'Store hours'}
+				</p>
 				<h2 class="mt-4 text-xl font-bold text-navy-dark md:text-2xl">Plan your visit.</h2>
+
+				{#if activeAnnouncements.length}
+					<div class="mt-6 space-y-4">
+						{#each activeAnnouncements as announcement}
+							<div class="rounded-3xl border border-amber-200 bg-amber-50 px-5 py-5">
+								<p class="text-xs font-semibold uppercase tracking-[0.24em] text-brand-red">Special announcement</p>
+								<h3 class="mt-2 text-base font-bold text-navy-dark">{announcement.title}</h3>
+								<p class="mt-2 leading-7 text-slate-700">{announcement.message}</p>
+
+								{#if announcement.hoursOverrides?.length}
+									<div class="mt-4 space-y-2">
+										{#each announcement.hoursOverrides as row}
+											<div class="flex items-center justify-between gap-6 rounded-2xl border border-white/70 bg-white/80 px-4 py-3">
+												<span class="font-medium text-slate-700">{row.dateLabel}</span>
+												<span class="text-right font-semibold text-navy">{row.hours}</span>
+											</div>
+										{/each}
+									</div>
+								{/if}
+							</div>
+						{/each}
+					</div>
+				{/if}
+
 				<div class="mt-8 space-y-3">
 					{#each storeHours as row}
 						<div class="flex items-center justify-between gap-6 rounded-2xl bg-slate-50 px-4 py-4">

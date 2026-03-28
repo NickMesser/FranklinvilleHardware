@@ -9,6 +9,24 @@ export type HoursRow = {
 	hours: string;
 };
 
+export type HoursOverride = {
+	date: string;
+	dateLabel: string;
+	label: string;
+	hours: string;
+};
+
+export type SiteAnnouncement = {
+	id: string;
+	title: string;
+	message: string;
+	startsOn: string;
+	endsOn: string;
+	linkHref?: string;
+	linkLabel?: string;
+	hoursOverrides?: HoursOverride[];
+};
+
 export type BrandCard =
 	| {
 			kind: 'image';
@@ -112,8 +130,96 @@ export const storeHours: HoursRow[] = [
 	}
 ];
 
+// Add future seasonal closures or special notices here.
+export const siteAnnouncements: SiteAnnouncement[] = [
+	{
+		id: 'easter-2026',
+		title: 'Easter holiday hours',
+		message: 'We will be closed Sunday, Apr 5 for Easter. Regular hours resume Monday, Apr 6.',
+		startsOn: '2026-03-28',
+		endsOn: '2026-04-05',
+		linkHref: '/contact',
+		linkLabel: 'View store hours',
+		hoursOverrides: [
+			{
+				date: '2026-04-05',
+				dateLabel: 'Sunday, Apr 5',
+				label: 'Easter Sunday',
+				hours: 'Closed'
+			}
+		]
+	}
+];
+
+function toDateKey(date = new Date()) {
+	const year = date.getFullYear();
+	const month = String(date.getMonth() + 1).padStart(2, '0');
+	const day = String(date.getDate()).padStart(2, '0');
+
+	return `${year}-${month}-${day}`;
+}
+
+function isClosedHours(hours: string) {
+	return hours.trim().toLowerCase() === 'closed';
+}
+
+function getHoursOverrideForDate(now = new Date()) {
+	const dateKey = toDateKey(now);
+
+	for (const announcement of siteAnnouncements) {
+		const match = announcement.hoursOverrides?.find((override) => override.date === dateKey);
+
+		if (match) {
+			return match;
+		}
+	}
+
+	return null;
+}
+
 export function getTodaysHours(now = new Date()) {
+	const override = getHoursOverrideForDate(now);
+
+	if (override) {
+		return override.hours;
+	}
+
 	return now.getDay() === 0 ? storeHours[1].hours : storeHours[0].hours;
+}
+
+export function getTodaysHoursDisplay(now = new Date()) {
+	const override = getHoursOverrideForDate(now);
+
+	if (override) {
+		if (isClosedHours(override.hours)) {
+			return {
+				summary: `Closed for ${override.label}`,
+				headline: `Today: Closed for ${override.label}`
+			};
+		}
+
+		return {
+			summary: `${override.label}: ${override.hours}`,
+			headline: `Special hours today: ${override.hours}`
+		};
+	}
+
+	const todaysHours = getTodaysHours(now);
+
+	return {
+		summary: todaysHours,
+		headline: `Open Today: ${todaysHours}`
+	};
+}
+
+export function getActiveAnnouncements(now = new Date()) {
+	const dateKey = toDateKey(now);
+
+	return siteAnnouncements.filter((announcement) => dateKey >= announcement.startsOn && dateKey <= announcement.endsOn);
+}
+
+export function getActiveHoursOverrides(now = new Date()) {
+	return getActiveAnnouncements(now).flatMap((announcement) => announcement.hoursOverrides ?? []);
 }
 
 export const homeFeatures: CopyCard[] = [

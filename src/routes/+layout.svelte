@@ -1,5 +1,6 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.svg';
+	import AnnouncementBanner from '$lib/components/AnnouncementBanner.svelte';
 	import '../app.css';
 	import { getHardwareStoreSchema } from '$lib/seo';
 	import SiteFooter from '$lib/components/SiteFooter.svelte';
@@ -18,6 +19,7 @@
 
 <div class="flex min-h-screen flex-col">
 	<SiteHeader />
+	<AnnouncementBanner />
 	<main class="flex-1">
 		{@render children()}
 	</main>

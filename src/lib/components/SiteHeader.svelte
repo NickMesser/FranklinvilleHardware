@@ -2,11 +2,12 @@
 	import { afterNavigate } from '$app/navigation';
 	import { page } from '$app/state';
 	import { onMount } from 'svelte';
-	import { getTodaysHours, navLinks, siteMeta } from '$lib/data/site';
+	import { getTodaysHoursDisplay, navLinks, siteMeta } from '$lib/data/site';
 	import Icon from '$lib/components/Icon.svelte';
 
 	let mobileMenuOpen = false;
-	let todaysHours = '';
+	let todaysHoursSummary = '';
+	let todaysHoursHeadline = '';
 
 	const isActive = (href: string) => (href === '/' ? page.url.pathname === '/' : page.url.pathname.startsWith(href));
 
@@ -25,7 +26,9 @@
 	}
 
 	onMount(() => {
-		todaysHours = getTodaysHours();
+		const hoursDisplay = getTodaysHoursDisplay();
+		todaysHoursSummary = hoursDisplay.summary;
+		todaysHoursHeadline = hoursDisplay.headline;
 	});
 
 	afterNavigate(() => {
@@ -40,7 +43,7 @@
 		<div class="flex items-center justify-between gap-3 sm:hidden">
 			<div class="inline-flex min-w-0 items-center gap-2 text-slate-200">
 				<Icon name="clock" className="h-4 w-4 shrink-0 text-brand-amber" />
-				<span class="truncate">{todaysHours ? todaysHours : 'Open daily'}</span>
+				<span class="truncate">{todaysHoursSummary ? todaysHoursSummary : 'Open daily'}</span>
 			</div>
 			<a href={siteMeta.phoneHref} class="inline-flex shrink-0 items-center gap-2 font-medium text-slate-100 hover:text-white">
 				<Icon name="phone" className="h-4 w-4 text-brand-amber" />
@@ -55,7 +58,7 @@
 				</a>
 				<div class="inline-flex items-center gap-2">
 					<Icon name="clock" className="h-4 w-4 text-brand-amber" />
-					<span>{todaysHours ? `Open Today: ${todaysHours}` : 'Local hardware, paint, and repair help all week long.'}</span>
+					<span>{todaysHoursHeadline ? todaysHoursHeadline : 'Local hardware, paint, and repair help all week long.'}</span>
 				</div>
 			</div>
 			<a href={siteMeta.phoneHref} class="inline-flex items-center gap-2 font-medium hover:text-white">

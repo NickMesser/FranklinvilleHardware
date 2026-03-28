@@ -1,8 +1,14 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import Icon from '$lib/components/Icon.svelte';
-	import { navLinks, siteMeta, storeHours } from '$lib/data/site';
+	import { getActiveHoursOverrides, navLinks, siteMeta, storeHours, type HoursOverride } from '$lib/data/site';
 
 	const year = new Date().getFullYear();
+	let specialHours: HoursOverride[] = [];
+
+	onMount(() => {
+		specialHours = getActiveHoursOverrides();
+	});
 </script>
 
 <footer class="bg-navy text-slate-300">
@@ -43,7 +49,23 @@
 				</ul>
 
 				<div class="mt-6 rounded-3xl bg-white/8 p-4">
-					<p class="text-sm font-semibold text-white">Store Hours</p>
+					{#if specialHours.length}
+						<div class="rounded-2xl border border-brand-amber/20 bg-brand-amber/10 p-3">
+							<p class="text-xs font-semibold uppercase tracking-[0.24em] text-brand-amber">Special hours</p>
+							<ul class="mt-3 space-y-2 text-sm">
+								{#each specialHours as row}
+									<li class="flex items-center justify-between gap-4">
+										<span>{row.dateLabel}</span>
+										<span class="font-medium text-white">{row.hours}</span>
+									</li>
+								{/each}
+							</ul>
+						</div>
+					{/if}
+
+					<p class={`text-sm font-semibold text-white ${specialHours.length ? 'mt-4' : ''}`}>
+						{specialHours.length ? 'Regular Hours' : 'Store Hours'}
+					</p>
 					<ul class="mt-3 space-y-2 text-sm">
 						{#each storeHours as row}
 							<li class="flex items-center justify-between gap-4">
