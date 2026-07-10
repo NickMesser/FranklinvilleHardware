@@ -2,10 +2,11 @@
 	import { afterNavigate } from '$app/navigation';
 	import { page } from '$app/state';
 	import { onMount } from 'svelte';
-	import { getTodaysHoursDisplay, navLinks, siteMeta } from '$lib/data/site';
+	import { featuredServiceLinks, getTodaysHoursDisplay, navLinks, siteMeta } from '$lib/data/site';
 	import Icon from '$lib/components/Icon.svelte';
 
 	let mobileMenuOpen = false;
+	let servicesMenuOpen = false;
 	let todaysHoursSummary = '';
 	let todaysHoursHeadline = '';
 
@@ -17,6 +18,7 @@
 
 	function closeMenu() {
 		mobileMenuOpen = false;
+		servicesMenuOpen = false;
 	}
 
 	function handleWindowKeydown(event: KeyboardEvent) {
@@ -84,17 +86,60 @@
 
 			<nav class="hidden items-center gap-2 md:flex" aria-label="Primary">
 				{#each navLinks as link}
-					<a
-						href={link.href}
-						class={`rounded-full px-4 py-2 text-sm font-medium ${
-							isActive(link.href)
-								? 'bg-navy text-white shadow-sm'
-								: 'text-slate-600 hover:bg-slate-100 hover:text-navy'
-						}`}
-						aria-current={isActive(link.href) ? 'page' : undefined}
-					>
-						{link.label}
-					</a>
+					{#if link.href === '/services'}
+						<div class="relative">
+							<div
+								class={`inline-flex items-center rounded-full text-sm font-medium ${
+									isActive(link.href)
+										? 'bg-navy text-white shadow-sm'
+										: 'text-slate-600 hover:bg-slate-100 hover:text-navy'
+								}`}
+							>
+								<a href={link.href} class="py-2 pl-4 pr-2" aria-current={isActive(link.href) ? 'page' : undefined}>
+									{link.label}
+								</a>
+								<button
+									type="button"
+									class="flex h-9 w-8 items-center justify-center rounded-r-full"
+									aria-controls="services-menu"
+									aria-expanded={servicesMenuOpen}
+									aria-label={servicesMenuOpen ? 'Close services menu' : 'Open services menu'}
+									on:click={() => (servicesMenuOpen = !servicesMenuOpen)}
+								>
+									<span aria-hidden="true" class={`text-xs transition-transform ${servicesMenuOpen ? 'rotate-180' : ''}`}>⌄</span>
+								</button>
+							</div>
+
+							{#if servicesMenuOpen}
+								<div id="services-menu" class="absolute right-0 mt-3 w-[34rem] rounded-3xl border border-slate-200 bg-white p-4 shadow-soft">
+									<div class="flex items-center justify-between px-2 pb-3">
+										<p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Popular services</p>
+										<a href="/services" class="text-sm font-semibold text-brand-red hover:text-navy">See all services</a>
+									</div>
+									<div class="grid grid-cols-2 gap-2">
+										{#each featuredServiceLinks as service}
+											<a href={service.href} class="rounded-2xl px-3 py-3 hover:bg-slate-50">
+												<span class="block text-sm font-semibold text-navy-dark">{service.title}</span>
+												<span class="mt-1 block text-xs leading-5 text-slate-500">{service.description}</span>
+											</a>
+										{/each}
+									</div>
+								</div>
+							{/if}
+						</div>
+					{:else}
+						<a
+							href={link.href}
+							class={`rounded-full px-4 py-2 text-sm font-medium ${
+								isActive(link.href)
+									? 'bg-navy text-white shadow-sm'
+									: 'text-slate-600 hover:bg-slate-100 hover:text-navy'
+							}`}
+							aria-current={isActive(link.href) ? 'page' : undefined}
+						>
+							{link.label}
+						</a>
+					{/if}
 				{/each}
 				<a href={siteMeta.inventoryUrl} target="_blank" rel="noreferrer" class="button-primary ml-2">
 					<span>View Inventory</span>
@@ -130,6 +175,20 @@
 						{link.label}
 					</a>
 				{/each}
+				<div class="px-4 pb-1 pt-3">
+					<p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Popular services</p>
+				</div>
+				<div class="grid grid-cols-2 gap-2">
+					{#each featuredServiceLinks as service}
+						<a href={service.href} class="rounded-2xl bg-slate-50 px-3 py-3 text-sm font-medium leading-5 text-navy-dark">
+							{service.title}
+						</a>
+					{/each}
+				</div>
+				<div class="grid grid-cols-2 gap-2 pt-2">
+					<a href={siteMeta.phoneHref} class="button-secondary px-3">Call Store</a>
+					<a href={siteMeta.mapUrl} target="_blank" rel="noreferrer" class="button-secondary px-3">Directions</a>
+				</div>
 				<a href={siteMeta.inventoryUrl} target="_blank" rel="noreferrer" class="button-primary mt-3 flex w-full">
 					<span>View Inventory</span>
 				</a>

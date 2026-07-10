@@ -40,6 +40,7 @@
 								alt={service.image.alt}
 								class={`h-full w-full transition-transform duration-500 hover:scale-105 ${service.image.imageClass ?? 'object-cover'}`}
 								loading="lazy"
+								decoding="async"
 							/>
 						</div>
 					{/if}

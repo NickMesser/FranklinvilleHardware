@@ -6,9 +6,21 @@
 	export let kicker = '';
 </script>
 
+<svelte:head>
+	<link rel="preload" as="image" href={image} fetchpriority="high" />
+</svelte:head>
+
 <section class="relative isolate overflow-hidden bg-navy">
 	<div class="absolute inset-0">
-		<img src={image} alt="" class="h-full w-full object-cover brightness-[0.58]" />
+		<img
+			src={image}
+			alt=""
+			width="960"
+			height="1280"
+			fetchpriority="high"
+			decoding="async"
+			class="h-full w-full object-cover brightness-[0.58]"
+		/>
 		<div class="absolute inset-0 bg-navy-dark/82"></div>
 		<div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,32,53,0.76),rgba(15,32,53,0.68))]"></div>
 	</div>

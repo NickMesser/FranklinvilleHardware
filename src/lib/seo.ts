@@ -1,4 +1,4 @@
-import { siteMeta } from '$lib/data/site';
+import { featuredServiceLinks, siteMeta } from '$lib/data/site';
 
 type BreadcrumbItem = {
 	name: string;
@@ -24,12 +24,14 @@ export function getHardwareStoreSchema() {
 	return {
 		'@context': 'https://schema.org',
 		'@type': 'HardwareStore',
+		'@id': `${siteMeta.siteUrl}/#store`,
 		name: siteMeta.name,
 		description: siteMeta.description,
 		url: siteMeta.siteUrl,
 		image: toAbsoluteUrl(siteMeta.socialImage),
 		telephone: siteMeta.phoneDisplay,
 		email: siteMeta.email,
+		foundingDate: String(siteMeta.yearOpened),
 		address: {
 			'@type': 'PostalAddress',
 			streetAddress: '99 N Main St',
@@ -78,7 +80,34 @@ export function getHardwareStoreSchema() {
 			'Glass and plexiglass cutting',
 			'Plumbing supplies',
 			'Electrical supplies'
-		]
+		],
+		hasOfferCatalog: {
+			'@type': 'OfferCatalog',
+			name: 'In-store hardware services',
+			itemListElement: featuredServiceLinks.map((service) => ({
+				'@type': 'Offer',
+				itemOffered: {
+					'@type': 'Service',
+					name: service.title,
+					description: service.description,
+					url: toAbsoluteUrl(service.href),
+					provider: { '@id': `${siteMeta.siteUrl}/#store` }
+				}
+			}))
+		}
+	};
+}
+
+export function getWebSiteSchema() {
+	return {
+		'@context': 'https://schema.org',
+		'@type': 'WebSite',
+		'@id': `${siteMeta.siteUrl}/#website`,
+		url: siteMeta.siteUrl,
+		name: siteMeta.name,
+		description: siteMeta.description,
+		publisher: { '@id': `${siteMeta.siteUrl}/#store` },
+		inLanguage: 'en-US'
 	};
 }
 
@@ -118,13 +147,10 @@ export function makeWebPageSchema({ title, description, path }: WebPageSchemaInp
 		description,
 		url: toAbsoluteUrl(path),
 		isPartOf: {
-			'@type': 'WebSite',
-			name: siteMeta.name,
-			url: siteMeta.siteUrl
+			'@id': `${siteMeta.siteUrl}/#website`
 		},
 		about: {
-			'@type': 'HardwareStore',
-			name: siteMeta.name
+			'@id': `${siteMeta.siteUrl}/#store`
 		}
 	};
 }

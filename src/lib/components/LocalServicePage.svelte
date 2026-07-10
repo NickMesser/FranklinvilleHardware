@@ -32,7 +32,6 @@
 	title={pageData.metaTitle}
 	description={pageData.metaDescription}
 	path={pageData.path}
-	image={pageData.image}
 	jsonLd={getSeoSchemas()}
 />
 

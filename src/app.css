@@ -26,6 +26,29 @@ body {
 	color: #1f2937;
 }
 
+:focus-visible {
+	outline: 3px solid var(--color-brand-amber);
+	outline-offset: 3px;
+}
+
+.skip-link {
+	position: fixed;
+	left: 1rem;
+	top: 1rem;
+	z-index: 100;
+	transform: translateY(-180%);
+	border-radius: 9999px;
+	background: white;
+	padding: 0.75rem 1rem;
+	font-weight: 700;
+	color: var(--color-navy-dark);
+	box-shadow: var(--shadow-soft);
+}
+
+.skip-link:focus {
+	transform: translateY(0);
+}
+
 a,
 button,
 input,
@@ -165,6 +188,34 @@ textarea {
 	background-color: #fff;
 }
 
+.quick-action {
+	display: flex;
+	align-items: center;
+	gap: 0.875rem;
+	border-radius: 1rem;
+	padding: 0.75rem 1rem;
+	color: var(--color-navy-dark);
+}
+
+.quick-action:hover {
+	background: #f8fafc;
+}
+
+.quick-action strong,
+.quick-action small {
+	display: block;
+}
+
+.quick-action strong {
+	font-size: 0.875rem;
+}
+
+.quick-action small {
+	margin-top: 0.125rem;
+	font-size: 0.75rem;
+	color: #64748b;
+}
+
 .button-primary:focus-visible,
 .button-secondary:focus-visible {
 	outline: 2px solid var(--color-brand-red);
@@ -177,7 +228,7 @@ textarea {
 	}
 }
 
-.reveal {
+.js .reveal {
 	opacity: 0;
 	transform: translateY(28px);
 	transition:
@@ -185,12 +236,12 @@ textarea {
 		transform 0.7s ease;
 }
 
-.reveal.visible {
+.js .reveal.visible {
 	opacity: 1;
 	transform: none;
 }
 
-.reveal-stagger > * {
+.js .reveal-stagger > * {
 	opacity: 0;
 	transform: translateY(24px);
 	transition:
@@ -198,44 +249,44 @@ textarea {
 		transform 0.6s ease;
 }
 
-.reveal-stagger.visible > * {
+.js .reveal-stagger.visible > * {
 	opacity: 1;
 	transform: none;
 }
 
-.reveal-stagger.visible > *:nth-child(1) {
+.js .reveal-stagger.visible > *:nth-child(1) {
 	transition-delay: 0.04s;
 }
 
-.reveal-stagger.visible > *:nth-child(2) {
+.js .reveal-stagger.visible > *:nth-child(2) {
 	transition-delay: 0.1s;
 }
 
-.reveal-stagger.visible > *:nth-child(3) {
+.js .reveal-stagger.visible > *:nth-child(3) {
 	transition-delay: 0.16s;
 }
 
-.reveal-stagger.visible > *:nth-child(4) {
+.js .reveal-stagger.visible > *:nth-child(4) {
 	transition-delay: 0.22s;
 }
 
-.reveal-stagger.visible > *:nth-child(5) {
+.js .reveal-stagger.visible > *:nth-child(5) {
 	transition-delay: 0.28s;
 }
 
-.reveal-stagger.visible > *:nth-child(6) {
+.js .reveal-stagger.visible > *:nth-child(6) {
 	transition-delay: 0.34s;
 }
 
-.reveal-stagger.visible > *:nth-child(7) {
+.js .reveal-stagger.visible > *:nth-child(7) {
 	transition-delay: 0.4s;
 }
 
-.reveal-stagger.visible > *:nth-child(8) {
+.js .reveal-stagger.visible > *:nth-child(8) {
 	transition-delay: 0.46s;
 }
 
-.reveal-stagger.visible > *:nth-child(9) {
+.js .reveal-stagger.visible > *:nth-child(9) {
 	transition-delay: 0.52s;
 }
 

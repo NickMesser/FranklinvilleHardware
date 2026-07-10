@@ -19,6 +19,7 @@
 					alt={brand.alt}
 					class={`max-h-14 w-auto max-w-full object-contain ${brand.imageClass ?? ''}`}
 					loading="lazy"
+					decoding="async"
 				/>
 			{:else}
 				<span class={brand.textClass ?? 'text-lg font-semibold text-slate-700'}>{brand.text}</span>

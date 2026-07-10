@@ -5,6 +5,7 @@
 	import Icon from '$lib/components/Icon.svelte';
 	import SeoHead from '$lib/components/SeoHead.svelte';
 	import SectionHeading from '$lib/components/SectionHeading.svelte';
+	import { makeFaqSchema } from '$lib/seo';
 	import {
 		featuredServiceLinks,
 		homeFeatures,
@@ -13,12 +14,32 @@
 		paintBrands,
 		siteMeta
 	} from '$lib/data/site';
+
+	const homeFaqs = [
+		{
+			question: 'Does Franklinville Hardware refill propane tanks?',
+			answer: 'Yes. We offer on-site pump propane refills for grill tanks and other eligible portable cylinders.'
+		},
+		{
+			question: 'Can Franklinville Hardware cut keys and match paint?',
+			answer: 'Yes. Key cutting and custom paint matching are available in the store at 99 N Main St in Franklinville.'
+		},
+		{
+			question: 'Is Franklinville Hardware an authorized Stihl dealer?',
+			answer: 'Yes. We sell Stihl outdoor power equipment and provide authorized local service support.'
+		},
+		{
+			question: 'Can I check store inventory before visiting?',
+			answer: 'Yes. Use the View Inventory link to browse the online Paladin Shop, or call the store to confirm a specific item.'
+		}
+	] as const;
 </script>
 
 <SeoHead
 	title="Hardware Store in Franklinville, NY | Franklinville Hardware"
 	description="Franklinville Hardware is your local hardware store in Franklinville, NY for key cutting, paint matching, pump propane tank refills, and authorized Stihl dealer and service support."
 	path="/"
+	jsonLd={[makeFaqSchema([...homeFaqs])]}
 />
 
 <HeroBanner
@@ -32,6 +53,23 @@
 		<a href="/contact" class="button-secondary">Plan Your Visit</a>
 	</div>
 </HeroBanner>
+
+<nav class="border-b border-slate-200 bg-white" aria-label="Quick store actions">
+	<div class="page-shell grid gap-px py-3 sm:grid-cols-3">
+		<a href={siteMeta.phoneHref} class="quick-action">
+			<Icon name="phone" className="h-5 w-5 text-brand-red" />
+			<span><strong>Call the store</strong><small>{siteMeta.phoneDisplay}</small></span>
+		</a>
+		<a href={siteMeta.mapUrl} target="_blank" rel="noreferrer" class="quick-action">
+			<Icon name="location" className="h-5 w-5 text-brand-red" />
+			<span><strong>Get directions</strong><small>99 N Main St</small></span>
+		</a>
+		<a href={siteMeta.inventoryUrl} target="_blank" rel="noreferrer" class="quick-action">
+			<Icon name="package" className="h-5 w-5 text-brand-red" />
+			<span><strong>Check inventory</strong><small>Browse before you visit</small></span>
+		</a>
+	</div>
+</nav>
 
 <section class="section-space">
 	<div class="page-shell">
@@ -115,8 +153,36 @@
 		<div use:reveal class="reveal-stagger mt-12 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3">
 			{#each homeGallery as image}
 				<div class="overflow-hidden rounded-3xl shadow-card aspect-[4/3]">
-					<img src={image.src} alt={image.alt} class="h-full w-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
+					<img
+						src={image.src}
+						alt={image.alt}
+						width="960"
+						height="1280"
+						class="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+						loading="lazy"
+						decoding="async"
+					/>
 				</div>
+			{/each}
+		</div>
+	</div>
+</section>
+
+<section class="section-space bg-navy-lighter/65">
+	<div class="page-shell">
+		<div use:reveal class="reveal">
+			<SectionHeading
+				eyebrow="Quick answers"
+				title="What customers ask before they visit."
+				intro="A few useful details about the local services available at Franklinville Hardware."
+			/>
+		</div>
+		<div use:reveal class="reveal-stagger mx-auto mt-10 max-w-4xl space-y-4">
+			{#each homeFaqs as faq}
+				<details class="surface-card rounded-3xl p-6">
+					<summary class="cursor-pointer text-base font-bold text-navy-dark">{faq.question}</summary>
+					<p class="mt-4 leading-7 text-slate-600">{faq.answer}</p>
+				</details>
 			{/each}
 		</div>
 	</div>

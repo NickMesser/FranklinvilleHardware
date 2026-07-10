@@ -106,7 +106,7 @@ export const siteMeta = {
 	mapUrl: 'https://maps.google.com/?q=99+N+Main+St+Franklinville+NY+14737',
 	mapEmbedUrl:
 		'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2952.5!2d-78.4593!3d42.3373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d37b1e3f9e3c0b%3A0x8f2c1e4d5a6b7c8d!2s99%20N%20Main%20St%2C%20Franklinville%2C%20NY%2014737!5e0!3m2!1sen!2sus!4v1700000000000',
-	socialImage: '/IMG_1970 Large.jpeg',
+	socialImage: '/og.jpg',
 	yearOpened: 2021
 } as const;
 
@@ -244,51 +244,51 @@ export const hardwareBrands: BrandCard[] = [
 	{
 		kind: 'image',
 		name: 'DeWalt',
-		src: 'https://upload.wikimedia.org/wikipedia/commons/8/89/DeWalt_Logo.svg',
+		src: '/brands/dewalt.svg',
 		alt: 'DeWalt logo'
 	},
 	{
 		kind: 'image',
 		name: 'Stanley',
-		src: 'https://upload.wikimedia.org/wikipedia/commons/a/a7/Stanley_Hand_Tools_logo.svg',
+		src: '/brands/stanley.svg',
 		alt: 'Stanley logo'
 	},
 	{
 		kind: 'image',
 		name: 'Milwaukee',
-		src: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Milwaukee_Logo.svg',
+		src: '/brands/milwaukee.svg',
 		alt: 'Milwaukee logo'
 	},
 	{
 		kind: 'image',
 		name: 'SKIL',
-		src: 'https://upload.wikimedia.org/wikipedia/commons/c/c4/Skil_logo_2019.svg',
+		src: '/brands/skil.svg',
 		alt: 'SKIL logo'
 	},
 	{
 		kind: 'image',
 		name: 'SharkBite',
-		src: 'https://www.sharkbite.com/themes/custom/sharkbite/logo.svg',
+		src: '/brands/sharkbite.jpg',
 		alt: 'SharkBite logo',
-		containerClass: 'bg-slate-100 ring-1 ring-slate-200',
-		imageClass: 'brightness-0 contrast-200'
+		containerClass: 'bg-white ring-1 ring-slate-200',
+		imageClass: 'max-h-20'
 	},
 	{
 		kind: 'image',
 		name: '3M',
-		src: 'https://static.cdnlogo.com/logos/3/70/3m.svg',
+		src: '/brands/3m.svg',
 		alt: '3M logo'
 	},
 	{
 		kind: 'image',
 		name: 'Stihl',
-		src: 'https://static.cdnlogo.com/logos/s/66/stih.svg',
+		src: '/brands/stihl.svg',
 		alt: 'Stihl logo'
 	},
 	{
 		kind: 'image',
 		name: 'Happy Frog by FoxFarm',
-		src: 'https://foxfarm.com/wp-content/themes/g5_helium/custom/images/logo-big.png',
+		src: '/brands/foxfarm.png',
 		alt: 'Happy Frog by FoxFarm logo'
 	}
 ];
@@ -297,39 +297,39 @@ export const paintBrands: BrandCard[] = [
 	{
 		kind: 'image',
 		name: 'Valspar',
-		src: 'https://www.valspar.com/content/experience-fragments/cbg-valspar/us/en/site/header/master/_jcr_content/root/image.coreimg.png/1639664934317/valspar-logo.png',
+		src: '/brands/valspar.png',
 		alt: 'Valspar logo'
 	},
 	{
 		kind: 'image',
 		name: 'Flood',
-		src: 'https://cdn.prod.website-files.com/68c227d44a699278f2b6512f/68e7ef4f554e0bf7d8adab88_Dulux%20Lockup%20Blue%20CMYK%203.png',
+		src: '/brands/flood.png',
 		alt: 'Flood paint and wood finishes logo with paintbrush graphic'
 	},
 	{
 		kind: 'image',
 		name: 'Cabot',
-		src: 'https://www.cabotstain.com/content/dam/cbg-cabot/asset-clean-up/cabot-main-logo.png',
+		src: '/brands/cabot.png',
 		alt: 'Cabot logo'
 	},
 	{
 		kind: 'image',
 		name: 'Minwax',
-		src: 'https://static.cdnlogo.com/logos/m/15/minwax.svg',
+		src: '/brands/minwax.svg',
 		alt: 'Minwax logo',
 		imageClass: 'max-h-20'
 	},
 	{
 		kind: 'image',
 		name: 'Rust-Oleum',
-		src: 'https://cdn.worldvectorlogo.com/logos/rust-oleum-1.svg',
+		src: '/brands/rust-oleum.svg',
 		alt: 'Rust-Oleum logo',
 		imageClass: 'max-h-20'
 	},
 	{
 		kind: 'image',
 		name: 'Krylon',
-		src: 'https://static.cdnlogo.com/logos/k/36/krylon.svg',
+		src: '/brands/krylon.svg',
 		alt: 'Krylon logo'
 	}
 ];
@@ -505,7 +505,7 @@ export const servicesList: ServiceCard[] = [
 		title: 'Special Orders',
 		body: "If it's not on the shelf, we'll help track it down and place a special order.",
 		image: {
-			src: 'https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1200&q=80',
+			src: '/special-orders.jpg',
 			alt: 'Stock image of packaged boxes ready for shipment'
 		}
 	},
@@ -513,7 +513,7 @@ export const servicesList: ServiceCard[] = [
 		title: 'Authorized UPS Dropoff',
 		body: 'Drop off your prepaid UPS packages at the store and take care of shipping while you are already in town.',
 		image: {
-			src: 'https://upload.wikimedia.org/wikipedia/commons/6/6b/United_Parcel_Service_logo_2014.svg',
+			src: '/brands/ups.svg',
 			alt: 'UPS logo',
 			containerClass: 'bg-white p-8',
 			imageClass: 'object-contain'
@@ -528,7 +528,7 @@ export const servicesList: ServiceCard[] = [
 		title: 'Expert Guidance',
 		body: 'Our experienced team is always ready to help you find the right materials and next step.',
 		image: {
-			src: 'https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1200&q=80',
+			src: '/customer-service.jpg',
 			alt: 'Stock image of a store associate helping a customer'
 		}
 	}

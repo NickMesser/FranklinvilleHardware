@@ -47,7 +47,7 @@
 		</div>
 
 		<div use:reveal class="reveal overflow-hidden rounded-[2rem] shadow-soft">
-			<img src={aboutStoryImages.story.src} alt={aboutStoryImages.story.alt} class="h-full w-full object-cover" />
+			<img src={aboutStoryImages.story.src} alt={aboutStoryImages.story.alt} width="960" height="1280" class="h-full w-full object-cover" loading="lazy" decoding="async" />
 		</div>
 	</div>
 </section>
@@ -77,7 +77,7 @@
 				intro="Our in-store services help you solve problems quickly without making extra stops around town, from key cutting and paint matching to pump propane refills and authorized Stihl dealer and service support."
 			/>
 			<div class="mt-8 overflow-hidden rounded-[2rem] shadow-card">
-				<img src={aboutStoryImages.service.src} alt={aboutStoryImages.service.alt} class="h-72 w-full object-cover" />
+				<img src={aboutStoryImages.service.src} alt={aboutStoryImages.service.alt} width="960" height="1280" class="h-72 w-full object-cover" loading="lazy" decoding="async" />
 			</div>
 		</div>
 
@@ -113,10 +113,10 @@
 		</div>
 		<div use:reveal class="reveal-stagger mt-10 grid gap-6 md:grid-cols-2">
 			<div class="overflow-hidden rounded-[2rem] shadow-card aspect-[4/3]">
-				<img src={aboutStoryImages.paintOne.src} alt={aboutStoryImages.paintOne.alt} class="h-full w-full object-cover" />
+				<img src={aboutStoryImages.paintOne.src} alt={aboutStoryImages.paintOne.alt} width="960" height="1280" class="h-full w-full object-cover" loading="lazy" decoding="async" />
 			</div>
 			<div class="overflow-hidden rounded-[2rem] shadow-card aspect-[4/3]">
-				<img src={aboutStoryImages.paintTwo.src} alt={aboutStoryImages.paintTwo.alt} class="h-full w-full object-cover" />
+				<img src={aboutStoryImages.paintTwo.src} alt={aboutStoryImages.paintTwo.alt} width="960" height="1280" class="h-full w-full object-cover" loading="lazy" decoding="async" />
 			</div>
 		</div>
 		<div use:reveal class="reveal mt-8">
