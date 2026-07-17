@@ -126,7 +126,7 @@ export const storeHours: HoursRow[] = [
 	{
 		days: 'Sunday',
 		shortLabel: 'Sun',
-		hours: '9:00 AM - 1:00 PM'
+		hours: '9:00 AM - 3:00 PM'
 	}
 ];
 

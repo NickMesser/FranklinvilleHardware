@@ -57,7 +57,7 @@ export function getHardwareStoreSchema() {
 				'@type': 'OpeningHoursSpecification',
 				dayOfWeek: 'Sunday',
 				opens: '09:00',
-				closes: '13:00'
+				closes: '15:00'
 			}
 		],
 		areaServed: [

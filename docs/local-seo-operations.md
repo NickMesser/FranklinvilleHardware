@@ -10,7 +10,7 @@ Use the website as the source of truth and make the profile match it exactly.
 - Website: `https://franklinvillehardware.com`
 - Hours:
   - Monday-Saturday: `8:00 AM - 6:00 PM`
-  - Sunday: `9:00 AM - 1:00 PM`
+  - Sunday: `9:00 AM - 3:00 PM`
 - Primary category: `Hardware Store`
 
 Services to add to the profile:
